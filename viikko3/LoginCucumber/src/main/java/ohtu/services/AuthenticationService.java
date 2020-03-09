@@ -52,7 +52,7 @@ public class AuthenticationService {
         }
         
         boolean specialCase = false;
-        
+        // Here we test that pw includes either number or special character
         for (int i = 0; i < pw_palat.length; i++) {
  
             if (pw.charAt(i) < 64 || pw.charAt(i) > 122 || 
