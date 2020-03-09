@@ -40,7 +40,31 @@ public class AuthenticationService {
 
     private boolean invalid(String username, String password) {
         // validity check of username and password
-
+        String name = username.trim();
+        String pw = password.trim();
+        char[] pw_palat = pw.toCharArray();
+        if (name.length() < 3 || pw.length() < 8) {
+            return true;
+        }
+        
+        if (name.matches(".*[^a-z].*")) {
+            return true;
+        }
+        
+        boolean specialCase = false;
+        
+        for (int i = 0; i < pw_palat.length; i++) {
+ 
+            if (pw.charAt(i) < 64 || pw.charAt(i) > 122 || 
+               (pw.charAt(i) > 90 && pw.charAt(i) < 97)) {
+                specialCase = true;
+            }
+        }
+        
+        if (specialCase == false) {
+            return true;
+        }
+        
         return false;
     }
 }
