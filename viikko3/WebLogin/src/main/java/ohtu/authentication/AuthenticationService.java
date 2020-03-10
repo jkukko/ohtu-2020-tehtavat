@@ -59,7 +59,7 @@ public class AuthenticationService {
         String name = username.trim();
         String pw = password.trim();
         char[] pw_palat = pw.toCharArray();
-        
+        // test that name only have small characters
         if (name.matches(".*[^a-z].*")) {
             return true;
         }
