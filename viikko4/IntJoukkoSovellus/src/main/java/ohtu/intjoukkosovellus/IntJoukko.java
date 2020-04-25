@@ -158,8 +158,7 @@ public class IntJoukko {
     private void kasvataTaulukko() {
         int[] newTaulukko = new int[this.alkioidenLkm + OLETUSKASVATUS];
         for (int i = 0; i < this.lukuJoukko.length; i++) {
-            newTaulukko[i] = this.lukuJoukko[i];
-            
+            newTaulukko[i] = this.lukuJoukko[i];    
         }
         this.lukuJoukko = newTaulukko;
     }
