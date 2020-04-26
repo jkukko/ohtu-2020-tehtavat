@@ -28,5 +28,9 @@ public class QueryBuilder {
         return this;
     }
     
+    public QueryBuilder oneOf(Matcher...matcher) {
+        this.matcher = new Or(matcher);
+        return this;
+    }
     
 }
